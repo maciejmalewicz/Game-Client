@@ -1,0 +1,22 @@
+<div class = "row">
+  <div class = "col-sm">
+    <div [ngStyle]="{float: 'right'}" class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" (click) = "goToLogin()" class="btn btn-outline-primary">LOG IN</button>
+      <button type="button" (click) = "goToRegistration()" class="btn btn-outline-success">REGISTER</button>
+    </div>
+  </div>
+</div>
+<div class = "row">
+  <div class = "col-sm">
+    <div>
+      <app-login-form [hidden] = "loginHidden"></app-login-form>
+      <app-registration-form [hidden] = "registrationHidden"></app-registration-form>
+    </div>
+  </div>
+</div>
+  
+
+
+  
+
+

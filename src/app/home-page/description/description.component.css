@@ -1,0 +1,22 @@
+h2 {
+    color: rgb(204,204,204);
+    text-align: left;
+    text-shadow: 2px 2px #000000;
+    font-size: x-large;
+    font-weight: bolder;
+    padding-bottom: 10px;
+    font-family: cursive;
+}
+
+p {
+    color: rgb(204,204,204);
+    text-align: left;
+    text-shadow: 1px 1px #000000;
+    font-size: large;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.description {
+    margin-top: 50px;
+}

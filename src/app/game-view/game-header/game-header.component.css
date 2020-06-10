@@ -1,0 +1,41 @@
+.header{
+    background-color: rgb(208, 208, 208);
+    border-bottom-color: deepskyblue;
+    border-bottom-style: solid;
+    border-bottom-width: 5px;
+}
+
+.right-border{
+    border-right-color: deepskyblue;
+    border-right-style: solid;
+    border-right-width: 5px;
+}
+
+.centered{
+    position: absolute;
+    padding: 10% 0;
+}
+
+.centered2{
+    position: absolute;
+    padding: 5% 5% 0;
+}
+
+.resource-amount{
+    font-weight: bolder;
+}
+
+.bigger{
+    font-size: x-large;
+}
+
+.my-score{
+    color: deepskyblue;
+    font-weight: bolder;
+}
+
+.enemy-score{
+    font-size: x-small;
+    font-weight: bolder;
+    color: rgb(255, 231, 16);
+}

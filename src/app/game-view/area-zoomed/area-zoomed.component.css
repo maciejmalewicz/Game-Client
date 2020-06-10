@@ -1,0 +1,27 @@
+.full-width{
+    width: 100%;
+    
+    position: relative;
+}
+
+.building{
+    width: 15%;
+    height: 15%;
+}
+
+.margined{
+    margin-right: 20px;
+}
+
+.no-padding{
+    padding: 0px;
+    margin: 0px;
+}
+
+.dark{
+    background-image: "assets/game-graphics/popupBackground.png";
+}
+
+
+
+

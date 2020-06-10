@@ -1,0 +1,112 @@
+
+<div class = "row">
+    <div appSquareMaker class = "col-sm margined" >
+        <div appSquareMaker appSizeNotifier class = "full-width">
+            <div [ngStyle]="{'position': 'absolute'}">
+                <img [src] = "getBackground()" class = "img-fluid" alt = "Responsive image"/>
+            </div>
+            <!-- szablon -->
+            <!-- <div [ngStyle]="{'position': 'absolute'}">
+                <img src = "assets/game-graphics/szablon.png" class = "img-fluid" alt = "Responsive image"/>
+            </div> -->
+            
+            <div appArrowCross [loc] = "6" [ngStyle]="{'position': 'absolute'}">
+                <img [src] = "getWalls()" class = "img-fluid" alt = "Responsive image"/>
+            </div>
+
+            <div appCenterPosition appArrowCross [loc] = "1" [ngStyle]="{'position': 'absolute'}">
+                <img (click) = "pushSelection(1)" [src] = "getCenterBuilding()" class = "img-fluid" alt = "Responsive image"/>
+            </div> 
+            <div *ngIf="isBeingBuilt(1)" appCenterPosition appArrowCross [loc] = "1" [ngStyle]="{'position': 'absolute'}">
+                <img src = "assets/game-graphics/hammer.gif" class = "img-fluid" alt = "Responsive image"/>
+            </div>
+            <div [hidden] = "!isUpgraded(1)" appCenterPosition appArrowCross [loc] = "1" [ngStyle]="{'position': 'absolute'}">
+                <img src = "assets/game-graphics/upgradingAnimation.gif" class = "img-fluid" alt = "Responsive image"/>
+            </div>
+            
+            <div appEnlighter appNorthPosition appArrowCross [loc] = "2" [ngStyle]="{'position': 'absolute'}">
+                <img (click) = "pushSelection(2)" [src] = "getNorthBuilding()" class = "img-fluid" alt = "Responsive image"/>
+            </div>
+            <div *ngIf="isBeingBuilt(2)" appNorthPosition appArrowCross [loc] = "2" [ngStyle]="{'position': 'absolute'}">
+                <img src = "assets/game-graphics/hammer.gif" class = "img-fluid" alt = "Responsive image"/>
+            </div>
+            <div [hidden] = "!isUpgraded(2)" appNorthPosition appArrowCross [loc] = "2" [ngStyle]="{'position': 'absolute'}">
+                <img src = "assets/game-graphics/upgradingAnimation.gif" class = "img-fluid" alt = "Responsive image"/>
+            </div>
+            
+            <div appEnlighter appSouthPosition appArrowCross [loc] = "3" [ngStyle]="{'position': 'absolute'}">
+                <img (click) = "pushSelection(3)" [src] = "getSouthBuilding()" class = "img-fluid" alt = "Responsive image"/>
+            </div>
+            <div *ngIf="isBeingBuilt(3)" appSouthPosition appArrowCross [loc] = "3" [ngStyle]="{'position': 'absolute'}">
+                <img src = "assets/game-graphics/hammer.gif" class = "img-fluid" alt = "Responsive image"/>
+            </div>
+            <div [hidden] = "!isUpgraded(3)" appSouthPosition appArrowCross [loc] = "3" [ngStyle]="{'position': 'absolute'}">
+                <img src = "assets/game-graphics/upgradingAnimation.gif" class = "img-fluid" alt = "Responsive image"/>
+            </div>
+
+            <div appEnlighter appWestPosition appArrowCross [loc] = "4" [ngStyle]="{'position': 'absolute'}">
+                <img (click) = "pushSelection(4)" [src] = "getWestBuilding()" class = "img-fluid" alt = "Responsive image"/>
+            </div>
+            <div *ngIf="isBeingBuilt(4)" appWestPosition appArrowCross [loc] = "4" [ngStyle]="{'position': 'absolute'}">
+                <img src = "assets/game-graphics/hammer.gif" class = "img-fluid" alt = "Responsive image"/>
+            </div>
+            <div [hidden] = "!isUpgraded(4)" appWestPosition appArrowCross [loc] = "4" [ngStyle]="{'position': 'absolute'}">
+                <img src = "assets/game-graphics/upgradingAnimation.gif" class = "img-fluid" alt = "Responsive image"/>
+            </div>
+
+            <div appEnlighter appEastPosition appArrowCross [loc] = "5" [ngStyle]="{'position': 'absolute'}">
+                <img (click) = "pushSelection(5)" [src] = "getEastBuilding()" class = "img-fluid" alt = "Responsive image"/>
+            </div> 
+            <div *ngIf="isBeingBuilt(5)" appEastPosition appArrowCross [loc] = "5" [ngStyle]="{'position': 'absolute'}">
+                <img src = "assets/game-graphics/hammer.gif" class = "img-fluid" alt = "Responsive image"/>
+            </div>
+            <div [hidden] = "!isUpgraded(5)" appEastPosition appArrowCross [loc] = "5" [ngStyle]="{'position': 'absolute'}">
+                <img src = "assets/game-graphics/upgradingAnimation.gif" class = "img-fluid" alt = "Responsive image"/>
+            </div>
+
+            
+            <ng-template #popContent><app-upgrade-popups></app-upgrade-popups></ng-template>
+            <!-- center -->
+            <div [hidden] = "!canBeUpgraded(1)" appArrowPosition [loc] = "1" [ngStyle]="{'position': 'absolute'}">
+                <img src = "assets/game-graphics/upgrade-arrow.png" (click) = "upgradeBuilding()" 
+                 class = "img-fluid" alt = "Responsive image" [container]="'body'"
+                 [ngbPopover]="popContent" [autoClose]="false" placement="left" triggers="mouseenter:mouseleave" popoverClass="dark"/>
+            </div>
+            
+
+            <!-- north -->
+            <div [hidden] = "!canBeUpgraded(2)" appArrowPosition [loc] = "2" [ngStyle]="{'position': 'absolute'}">
+                <img src = "assets/game-graphics/upgrade-arrow.png" (click) = "upgradeBuilding()" 
+                class = "img-fluid" [ngStyle]="{'padding': '1px'}" alt = "Responsive image"  [container]="'body'"
+                [ngbPopover]="popContent" [autoClose]="false" placement="left" triggers="mouseenter:mouseleave" popoverClass="dark"/>
+            </div>
+
+            <!-- south -->
+            <div [hidden] = "!canBeUpgraded(3)" appArrowPosition [loc] = "3" [ngStyle]="{'position': 'absolute'}">
+                <img src = "assets/game-graphics/upgrade-arrow.png" (click) = "upgradeBuilding()" class = "img-fluid" 
+                [ngStyle]="{'padding': '1px'}" alt = "Responsive image"  [container]="'body'"
+                [ngbPopover]="popContent" [autoClose]="false" placement="left" triggers="mouseenter:mouseleave" popoverClass="dark"/>
+            </div>
+
+            <!-- west -->
+            <div [hidden] = "!canBeUpgraded(4)" appArrowPosition [loc] = "4" [ngStyle]="{'position': 'absolute'}">
+                <img src = "assets/game-graphics/upgrade-arrow.png" (click) = "upgradeBuilding()"
+                 class = "img-fluid" [ngStyle]="{'padding': '1px'}" alt = "Responsive image"  [container]="'body'"
+                 [ngbPopover]="popContent" [autoClose]="false" placement="left" triggers="mouseenter:mouseleave" popoverClass="dark"/>
+            </div>
+
+            <!-- east -->
+            <div [hidden] = "!canBeUpgraded(5)" appArrowPosition [loc] = "5" [ngStyle]="{'position': 'absolute'}">
+                <img src = "assets/game-graphics/upgrade-arrow.png" (click) = "upgradeBuilding()"
+                 class = "img-fluid" [ngStyle]="{'padding': '1px'}" alt = "Responsive image"  [container]="'body'"
+                 [ngbPopover]="popContent" [autoClose]="false" placement="left" triggers="mouseenter:mouseleave" popoverClass="dark"/>
+            </div>
+
+            <div [hidden] = "!canWallsBeUpgraded()" appEnlighter appArrowPosition [loc] = "6" [ngStyle]="{'position': 'absolute'}">
+                <img  (click)="upgradeWalls()" src = "assets/game-graphics/upgradeWalls.png" 
+                class = "img-fluid" [ngStyle]="{'padding': '1px'}" alt = "Responsive image"  [container]="'body'"
+                [ngbPopover]="popContent" [autoClose]="false" placement="left" triggers="mouseenter:mouseleave" popoverClass="dark"/>
+            </div>
+        </div>
+    </div>
+</div>

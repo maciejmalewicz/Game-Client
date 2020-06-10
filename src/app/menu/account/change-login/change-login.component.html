@@ -1,0 +1,51 @@
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "text-center">
+            <h1 class = "menu-header">CHANGE LOGIN</h1>
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "text-center">
+            <div class = "window-description">
+                TO CHANGE YOUR LOGIN, ENTER YOUR NEW WANTED LOGIN. 
+                WE WILL SEND YOU AN ACTIVATION CODE INTO YOUR E-MAIL.
+                COPY IT BELOW, AND YOUR LOGIN WILL BE CHANGED!
+            </div>
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-2"></div>
+    <div class = "col-8">
+        <div class = "text-left">
+            <h6 class = "account-input-description">NEW LOGIN</h6>
+            <span>
+                <input [(ngModel)] = "login" class = "account-input" type = "text"/>
+                <button (click) = "sendLogin()" [ngStyle]="{'margin-left': '5px'}" type = "button" class = "btn btn-success">SEND</button>
+            </span>
+            <div class = "text-left">
+                <div appChangeLoginMessenger class = "error-message"></div>
+            </div>
+        </div>
+    </div>
+    <div class = "col-2"></div>
+</div>
+<div class = "row">
+    <div class = "col-2"></div>
+    <div class = "col-8">
+        <div class = "text-left">
+            <h6 class = "account-input-description2">ACTIVATION CODE</h6>
+            <span>
+                <input [(ngModel)] = "code" class = "account-input2" type = "text"/>
+                <button (click) = "sendCode()" [ngStyle]="{'margin-left': '5px'}" type = "button" class = "btn btn-primary">SEND</button>
+            </span>
+            <div class = "text-left">
+                <div appActivateLoginMessenger class = "error-message"></div>
+            </div>
+        </div>
+    </div>
+    <div class = "col-2"></div>
+</div>
+

@@ -1,0 +1,17 @@
+.time{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: xx-small;
+    font-weight: lighter;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: yellow;
+    font-weight: bolder;
+}
+
+.title{
+    font-size: small;
+    font-weight: bolder;
+    color: white;
+    text-shadow: 2px black;
+}

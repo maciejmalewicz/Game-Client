@@ -1,0 +1,122 @@
+<!-- (click) = "sendInvitation()" -->
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "text-center" [ngStyle]="{'margin-top': '5px'}">
+            <button (click) = "showInvitationField()" [ngClass]="getInvitationButtonClass()"
+             type="button">INVITE TO FRIENDS</button>
+        </div>
+    </div>
+</div>
+<div [hidden] = "invitationFieldHidden" [ngStyle]="{'margin-top': '5px'}" class = "row">
+    <div class = "col-8 no-padding-right">
+        <div class = "text-left">
+            <input [(ngModel)]="invitationLogin" class = "invitation-input" type = "text"/>
+        </div>
+    </div>
+    <div class = "col-4 no-padding-left">
+        <div class = "text-center">
+            <button type="button" (click) = "invite()" class="btn btn-success btn-sm btn-block">INVITE</button>
+        </div>
+    </div>
+</div>
+<div [hidden] = "invitationFieldHidden" class = "row">
+    <div class = "col-sm">
+        <div class = "text-left">
+            <div appInviteFriend class = "error-message">
+               <!-- errors -->
+            </div>
+        </div>
+    </div>
+</div>
+<div [hidden] = "invitationFieldHidden" class = row>
+    <div class = "col-sm">
+        <div class = "text-left">
+            <div class = "secondary-header">
+                SUGGESTED FRIENDS
+            </div>
+        </div>
+    </div>
+</div>
+<div [hidden] = "invitationFieldHidden" class = "row" 
+        *ngFor = "let str of this.suggestionService.suggestions; let i = index">
+    <div class = "col-8">
+        <div class = "text-left">
+            <button (click) = "setInvitationLogin(i)" class = "btn btn-link btn-sm zero-padding-left">{{str}}</button>
+        </div>
+    </div>
+    <div class = "col-4">
+
+    </div>
+</div>
+
+<div class = "row" [ngStyle]="{'margin-top': '5px'}">
+    <div class = "col-sm">
+        <div class = "text-center">
+            <button type="button" (click) = "changeInvitationsSent()" 
+            [ngClass]="getInvitationsSentButtonClass()">INVITATIONS ({{service.invitations.length}})</button>
+        </div>
+    </div>
+</div>
+<div [hidden] = "invitationsSentHidden" class = "row" [ngStyle]="{'margin-top': '5px'}" 
+*ngFor="let str of service.invitations; let i = index">
+    <div class = "col-6">
+        <div class = "text-left">
+            <div class = "invitation">
+                {{str}}
+            </div>
+        </div>
+    </div>
+    <div class = "col-3">
+        <img appEnlighter class = "img-fluid" src = "assets/tick.png" alt = "Responsive image" (click) = "acceptInvitation(i)"/>
+    </div>
+    <div class = "col-3">
+        <img appEnlighter class = "img-fluid" src = "assets/cross.png" alt = "Responsive image" (click) = "deleteInvitation(i)"/>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "text-center" [ngStyle]="{'margin-top': '5px'}">
+            <button (click) = "changeActive()" type="button" 
+            [ngClass]="getActiveButtonClass()">ACTIVE FRIENDS ({{service.activeFriends.length}})</button>
+        </div>
+    </div>
+</div>
+<div [hidden] = "activeHidden" class = "row" *ngFor="let login of service.activeFriends; let i = index">
+    <div class = "col-9 no-padding-right">
+        <div class = "text-left" [ngStyle]="{'margin-top': '5px'}">
+            <button (click) = "loadActiveProfile(i)" type="button" class="btn btn-success btn-sm btn-block">{{login}}</button>
+        </div>
+    </div>
+    <div class = "col-3 no-padding-left">
+        <div class = "float-left">
+            <div [ngStyle]="{'margin-top': '5px'}">
+                <img (click) = "log()" appEnlighter class="img-fluid" alt="Responsive image" src = "assets/envelope.png"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class = "row" [ngStyle]="{'margin-top': '5px'}">
+    <div class = "col-sm">
+        <div class = "text-center">
+            <button (click) = "changeOther()" [ngClass]="getOtherButtonClass()">
+                SHOW ALL ({{service.notActiveFriends.length}})</button>
+        </div>
+    </div>
+</div>
+<div [hidden] = "otherHidden" class = "row" *ngFor="let login of service.notActiveFriends; let i = index">
+    <div class = "col-9 no-padding-right">
+        <div class = "text-left" [ngStyle]="{'margin-top': '5px'}">
+            <button (click) = "loadNotActiveProfile(i)" type="button" class="btn btn-success btn-sm btn-block">{{login}}</button>
+        </div>
+    </div>
+    <div class = "col-3 no-padding-left">
+        <div class = "float-left">
+            <div [ngStyle]="{'margin-top': '5px'}">
+                <img (click) = "log()" appEnlighter class="img-fluid" alt="Responsive image" src = "assets/envelope.png"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

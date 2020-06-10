@@ -1,0 +1,9 @@
+.modal .modal-popout-bg {
+    background-image: url('src/assets/game-graphics/popupBackground.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}
+.show{
+    display: block
+}

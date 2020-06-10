@@ -1,0 +1,42 @@
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "text-center">
+            <h1 class = "menu-header">SETTINGS</h1>
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "text-center">
+            <div class = "window-description">
+                HERE YOU CAN CONFIGURE THE KEYBOARD SHORTCUTS THAT
+                YOU ARE USING IN GAME. YOU MAY SAVE YOUR FAVOURITE SHORTCUT
+                SET SO IT WILL BE AVAILABLE EACH TIME YOU ARE LOGGED IN, 
+                YOU MAY EXPERIMENT ON CUSTOM SETTINGS OR COME BACK TO DEFAULT
+                ANY TIME YOU WANT. GOOD SHORTCUTS WILL GIVE SAVE YOU SOME TIME
+                DURING THE GAME, WHICH IS THE KEY TO VICTORY! TO CUSTOMIZE YOUR SHORTCUTS,
+                GO TO THE "CUSTOM SETTINGS" AND CLICK ON THE BUTTON REPRESENTING WHAT YOU WANT
+                TO BIND, AND THEN PRESS A KEY ON YOUR KEYBOARD.
+            </div>
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "text-center">
+            <div class="btn-group" [ngStyle]="{'margin-top': '5px'}" role="group" aria-label="Basic example">
+                <button type="button" (click) = "goToDefaultSettings()" class="btn btn-primary">DEFAULT SETTINGS</button>
+                <button type="button" (click) = "goToSavedSettings()" class="btn btn-success">SAVED SETTINGS</button>
+                <button type="button" (click) = "goToCustomSettings()" class="btn btn-secondary">CUSTOM SETTINGS</button>
+              </div>
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <app-default-settings [hidden] = "defaultSettingsHidden"></app-default-settings>
+        <app-saved-settings [hidden] = "savedSettingsHidden"></app-saved-settings>
+        <app-custom-settings [hidden] = "customSettingsHidden"></app-custom-settings>
+    </div>
+</div>
+

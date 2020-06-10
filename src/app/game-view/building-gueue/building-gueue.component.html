@@ -1,0 +1,29 @@
+<div class = "row">
+    <div class = "col-sm title">
+        Building Queue
+    </div>
+</div>
+<div class = "row">
+    <div *ngFor = "let event of selectedArea?.selectedField?.BUILDING_QUEUE?.events; let i = index" appSquareMaker class = "col-1 no-margin relative">
+        <img [src] = "getImage(i)" class = "img-fluid" alt = "Responsive image"/>
+        
+        <!-- <img src = "assets\game-graphics\darkened.png" class = "img-fluid inside-picture" alt = "Responsive image"/> -->
+        <div class = "text-center time-left inside-picture">
+            {{getTime(i)}}
+        </div> 
+        <div class = "text-center level inside-picture-bottom">
+            {{getLevel(i)}}
+        </div> 
+    </div>
+</div>
+<div class = "row">
+    <div *ngIf="isEmpty()" class="col-sm title">
+        Nothing is being built now!
+    </div>
+    <div *ngIf="isHostile()" class="col-sm title">
+        You know nothing about it!
+    </div>
+</div>
+
+
+

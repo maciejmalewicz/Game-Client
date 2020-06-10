@@ -1,0 +1,14 @@
+<div class = "row">
+    <div class = "col-sm">
+        <img [src] = "getSource()" class = "img-fluid" alt = "Responsive image"/>
+    </div>
+    <div class = "col-sm popup-amount-before">
+        {{getProduction()}}
+    </div>
+    <div class = "col-sm">
+        <img src = "assets\game-graphics\misc\upgrades\progress-arrow.png" class = "img-fluid" alt = "Responsive image"/>
+    </div>
+    <div class = "col-sm popup-amount-after">
+        {{getNextProduction()}}
+    </div>
+</div>

@@ -1,0 +1,17 @@
+.type-header{
+    color: rgb(0, 120, 255);
+    border-bottom: rgb(0, 120, 255);
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+}
+
+.type-frame{
+    border-color: rgb(0, 120, 255);
+    border-style: dotted;
+    border-width: 5px;
+    height: 100%;
+}
+
+.type-description{
+    color: rgb(204, 204, 204);
+}

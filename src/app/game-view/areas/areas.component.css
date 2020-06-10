@@ -1,0 +1,25 @@
+.fields{
+    background-color: rgba(218, 215, 74, 0.0);
+}
+
+.bordered{
+    border: black;
+    border-width: 1px;
+    border-style: solid;
+    background-color: rgba(100, 100, 100, 0.0);
+}
+
+.error-message{
+    color: rgb(255, 196, 0);
+    float: right;
+    font-size: small;
+  }
+
+.link{
+    position: absolute;
+    z-index: 1000;
+}
+
+.unfocusable{
+    pointer-events: none;
+}

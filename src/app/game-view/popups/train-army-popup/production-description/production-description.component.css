@@ -1,0 +1,10 @@
+.production-type-title{
+    color: white;
+    font-size: small;
+    border-top: 2px solid cyan;
+    border-bottom: 2px solid cyan;
+}
+
+.amount{
+    color: white;
+}

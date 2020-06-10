@@ -1,0 +1,14 @@
+h4 {
+    color: white;
+}
+
+.troop-description{
+    color: white;
+    font-size: smaller;
+    font-weight: bold;
+}
+
+.production-type{
+    padding-top: 4px;
+    color: white;
+}

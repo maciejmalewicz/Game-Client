@@ -1,0 +1,61 @@
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "text-center">
+            <h1 class = "menu-header">GAME HISTORY</h1>
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "unit" *ngFor="let unit of this.currentlyLoadedProfile?.history">
+            <div class = "row">
+                <div class = "col-6">
+                    <div class = "text-left">
+                        <div class = "date">{{unit?.date | date: 'yyyy-MM-dd'}}</div>
+                    </div>
+                </div>
+                <div class = "col-6">
+                    <div class = "text-right">
+                        <div class = "experience">EXP: {{unit?.experienceGained}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "col-6">
+                    <div class = "text-left">
+                        <div class = "your-result" [ngClass]="{'enemy-result': unit.player1Login != this.currentlyLoadedProfile?.login}">
+                            {{unit?.player1Login}}: {{unit?.player1Result | percent: '1.2-2' }}
+                        </div>  
+                    </div> 
+                </div>
+                <div class = "col-6">
+                    <div class = "text-right">
+                        <div class = "your-result" [ngClass]="{'enemy-result': unit.player2Login != this.currentlyLoadedProfile?.login}">
+                            {{unit?.player2Login}}: {{unit?.player2Result | percent: '1.2-2'}}
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <div  class = "row">
+                <div class = "col-6">
+                    <div class = "text-left">
+                        <div class = "your-result" [ngClass]="{'enemy-result': unit.player3Login != this.currentlyLoadedProfile?.login}">
+                            {{unit?.player3Login}}: {{unit?.player3Result | percent: '1.2-2'}}
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-6">
+                    <div class = "text-right">
+                        <div class = "your-result" [ngClass]="{'enemy-result': unit.player4Login != this.currentlyLoadedProfile?.login}">
+                            {{unit?.player4Login}}: {{unit?.player4Result | percent: '1.2-2'}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+

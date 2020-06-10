@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class = "col-sm small-padding">
+      <img src = "assets\game-graphics\metal2.png" class = "img-small" alt = "Responsive image"/>
+    </div>
+    <div class = "col-sm big-padding text-left cost-amount">
+      {{getMetalCost()}}
+    </div>
+    <div class = "col-sm small-padding small-padding">
+      <img src = "assets\game-graphics\buildingMaterials2.png" class = "img-small" alt = "Responsive image"/>
+    </div>
+    <div class = "col-sm big-padding text-left cost-amount">
+      {{getMaterialsCost()}}
+    </div>
+    <div class = "col-sm small-padding">
+      <img src = "assets\game-graphics\electricity2.png" class = "img-small" alt = "Responsive image"/>
+    </div>
+    <div class = "col-sm big-padding text-left cost-amount">
+        {{getElectricityCost()}}
+    </div>
+    <div class = "col-sm small-padding">
+      <img src = "assets\game-graphics\time.png" class = "img-small" alt = "Responsive image"/>
+    </div>
+    <div class = "col-sm big-padding text-left cost-amount">
+      {{getTimeString()}}
+    </div>
+  </div>
+  <app-upgrade-factory-description *ngIf="isResourceFactory()"></app-upgrade-factory-description>
+</div>

@@ -1,0 +1,113 @@
+<div class="modal show">
+    <div class="modal-dialog">
+  
+      <!-- Modal content-->
+      <div class="modal-content modal-popout-bg">
+        <div class="modal-header">
+          <button (click) = "sendSignal(-2)" type="button" class="close white" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">TRANSFER ARMY</h4>
+          <h4></h4>
+        </div>
+        <div class="modal-body" [ngStyle]="{'position': 'relative'}">
+            <div class = "container">
+                <div class = "row">
+                    <div class = "col-3 label-description">Units you can send</div>
+                    <div class = "col-6">
+                        <div class = "row">
+                            <div class = "col-4 small-padding">
+                                <div class = "row">
+                                    <div class = "col-sm relative">
+                                        <img appEnlighter (click) = "selectAll(1)" src = "assets\game-graphics\mechs\droid-full.png" class = "img-fluid relative"
+                                        alt = "Responsive image"/>
+                                        <div class = "amount">{{getFirstUnits(1)}}</div>
+                                    </div>
+                                </div>
+                                <div class = "row">
+                                    <div class = "col-sm">
+                                        <input [(ngModel)]="armyToSend.droids" type="number" class = "col-sm no-padding"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "col-4 small-padding">
+                                <div class = "row">
+                                    <div class = "col-sm relative">
+                                        <img appEnlighter (click) = "selectAll(2)" src = "assets\game-graphics\mechs\tank-full.png" class = "img-fluid relative"
+                                        alt = "Responsive image"/>
+                                        <div class = "amount">{{getFirstUnits(2)}}</div>
+                                    </div>
+                                </div>
+                                <div class = "row">
+                                    <div class = "col-sm">
+                                        <input [(ngModel)]="armyToSend.tanks" type="number" class = "col-sm no-padding"/>
+                                    </div>
+                                </div>
+                            </div>   
+                            <div class = "col-4 small-padding">
+                                <div class = "row">
+                                    <div class = "col-sm relative">
+                                        <img appEnlighter (click) = "selectAll(3)" src = "assets\game-graphics\mechs\cannon-full.png" class = "img-fluid relative"
+                                        alt = "Responsive image"/>
+                                        <div class = "amount">{{getFirstUnits(3)}}</div>
+                                    </div>
+                                </div>
+                                <div class = "row">
+                                    <div class = "col-sm">
+                                        <input [(ngModel)]="armyToSend.cannons" type="number" class = "col-sm no-padding"/>
+                                    </div>
+                                </div>
+                            </div>      
+                        </div>
+                    </div>
+                    <div class = "col-3"></div>
+                </div>
+                <div class = "row">
+                    <div class = "col-5"></div>
+                    <div class = "col-2">
+                        <img appEnlighter (click) = "transferArmy()" src="assets\game-graphics\misc\transfer-button.png" class = "img-fluid" alt = "Responsive image"/>
+                    </div>
+                    <div class = "col-5"></div>
+                </div>
+                <div class = "row">
+                    <div class = "col-3 label-description">Units on target area after sending</div>
+                    <div class = "col-6">
+                        <div class = "row">
+                            <div class = "col-4 small-padding">
+                                <div class = "row">
+                                    <div class = "col-sm relative">
+                                        <img src = "assets\game-graphics\mechs\droid-full.png" class = "img-fluid relative"
+                                        alt = "Responsive image"/>
+                                        <div class = "amount">{{getSecondUnitsAfterTransfer(1)}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "col-4 small-padding">
+                                <div class = "row">
+                                    <div class = "col-sm relative">
+                                        <img src = "assets\game-graphics\mechs\tank-full.png" class = "img-fluid relative"
+                                        alt = "Responsive image"/>
+                                        <div class = "amount">{{getSecondUnitsAfterTransfer(2)}}</div>
+                                    </div>
+                                </div>
+                            </div>   
+                            <div class = "col-4 small-padding">
+                                <div class = "row">
+                                    <div class = "col-sm relative">
+                                        <img src = "assets\game-graphics\mechs\cannon-full.png" class = "img-fluid relative"
+                                        alt = "Responsive image"/>
+                                        <div class = "amount">{{getSecondUnitsAfterTransfer(3)}}</div>
+                                    </div>
+                                </div>
+                            </div>      
+                        </div>
+                    </div>
+                    <div class = "col-3"></div>
+                </div>
+            </div> 
+        </div>
+        <div class="modal-footer">
+          <button (click) = "sendSignal(-2)" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>

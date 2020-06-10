@@ -1,0 +1,125 @@
+<!-- <div class = "row">
+    <div class = "col-sm">
+        <h3 class = "title">Army Training</h3>
+    </div>
+</div> -->
+<div class = "row">
+    <div class = "col-6">
+    </div>
+    <div class = "col-6">
+        <div class = "row">
+            <div class = "col-sm small-padding relative">
+                <img src = "/assets/game-graphics/mechs/droid.png" class = "img-fluid" alt = "Responsive image"/>
+                <div class = "amount">
+                    {{getDroids()}}
+                </div>
+            </div>
+            <div class = "col-sm small-padding relative">
+                <img src = "/assets/game-graphics/mechs/tank.png" class = "img-fluid" alt = "Responsive image"/>
+                <div class = "amount">
+                    {{getTanks()}}
+                </div>
+            </div>
+            <div class = "col-sm small-padding relative">
+                <img src = "/assets/game-graphics/mechs/cannon.png" class = "img-fluid" alt = "Responsive image"/>
+                <div class = "amount">
+                    {{getCannons()}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-6 type-description">
+        Regular production
+    </div>
+    <div class = "col-6">
+        <div class = "row">
+            <div class = "col-sm small-padding relative">
+                <img appButtonActivator [enlightingCondition]="canBeTrained(1)" [src] = "getSource(1)"
+                 (click)="trainArmy(1, 1)" class = "img-fluid" alt = "Responsive image"/>
+                <div class = "production-amount">
+                    {{getProductionAmount(1)}}
+                </div>
+            </div>
+            <div class = "col-sm small-padding relative">
+                <img appButtonActivator [enlightingCondition]="canBeTrained(2)" [src] = "getSource(2)" 
+                (click)="trainArmy(2, 1)" class = "img-fluid" alt = "Responsive image"/>
+                <div class = "production-amount">
+                    {{getProductionAmount(2)}}
+                </div>
+            </div>
+            <div class = "col-sm small-padding relative">
+                <img appButtonActivator [enlightingCondition]="canBeTrained(3)" [src] = "getSource(3)"
+                 (click)="trainArmy(3, 1)" class = "img-fluid" alt = "Responsive image"/>
+                <div class = "production-amount">
+                    {{getProductionAmount(3)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-6 type-description">
+        Bigger production
+    </div>
+    <div class = "col-6">
+        <div class = "row">
+            <div class = "col-sm small-padding relative">
+                <img appButtonActivator [enlightingCondition]="canBeTrained(4)" [src] = "getSource(4)" 
+                (click)="trainArmy(1, 2)" class = "img-fluid" alt = "Responsive image"/>
+                <div class = "production-amount">
+                    {{getProductionAmount(4)}}
+                </div>
+            </div>
+            <div class = "col-sm small-padding relative">
+                <img appButtonActivator [enlightingCondition]="canBeTrained(5)" [src] = "getSource(5)" 
+                (click)="trainArmy(2, 2)" class = "img-fluid" alt = "Responsive image"/>
+                <div class = "production-amount">
+                    {{getProductionAmount(5)}}
+                </div>
+            </div>
+            <div class = "col-sm small-padding relative">
+                <img appButtonActivator [enlightingCondition]="canBeTrained(6)" [src] = "getSource(6)" 
+                (click)="trainArmy(3, 2)" class = "img-fluid" alt = "Responsive image"/>
+                <div class = "production-amount">
+                    {{getProductionAmount(6)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class = "row">
+    <div class = "col-6 type-description">
+        Mass production
+    </div>
+    <div class = "col-6">
+        <div class = "row">
+            <div class = "col-sm small-padding relative">
+                <img appButtonActivator [enlightingCondition]="canBeTrained(7)" [src] = "getSource(7)"
+                 (click)="trainArmy(1, 3)" class = "img-fluid" alt = "Responsive image"/>
+                <div class = "production-amount">
+                    {{getProductionAmount(7)}}
+                </div>
+            </div>
+            <div class = "col-sm small-padding relative">
+                <img appButtonActivator [enlightingCondition]="canBeTrained(8)" [src] = "getSource(8)" 
+                (click)="trainArmy(2, 3)" class = "img-fluid" alt = "Responsive image"/>
+                <div class = "production-amount">
+                    {{getProductionAmount(8)}}
+                </div>
+            </div>
+            <div class = "col-sm small-padding relative">
+                <img appButtonActivator [enlightingCondition]="canBeTrained(9)" [src] = "getSource(9)" 
+                (click)="trainArmy(3, 3)" class = "img-fluid" alt = "Responsive image"/>
+                <div class = "production-amount">
+                    {{getProductionAmount(9)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

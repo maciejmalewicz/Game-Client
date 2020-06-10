@@ -1,0 +1,60 @@
+<div class = "row no-gutters" >
+    <div class = "col-4 cost-description">
+        {{getBuildingName()}}
+    </div>
+    <div class = "col-sm">
+        <img src = "assets/game-graphics/metal2.png" class = "img-fluid img-small" alt = "Responsive image"/>
+    </div>
+    <div class = "col-sm cost-description">
+        {{getMetalCost()}}
+    </div>
+    <div class = "col-sm">
+        <img src = "assets/game-graphics/buildingMaterials2.png" class = "img-fluid img-small" alt = "Responsive image"/>
+    </div>
+    <div class = "col-sm cost-description">
+        {{getBuildingMaterialsCost()}}
+    </div>
+    <div class = "col-sm">
+        <img src = "assets/game-graphics/electricity2.png" class = "img-fluid img-small" alt = "Responsive image"/>
+    </div>
+    <div class = "col-sm cost-description">
+        {{getElectricityCost()}}
+    </div>
+    <div class = "col-sm">
+        <img src = "assets/game-graphics/time.png" class = "img-fluid img-small" alt = "Responsive image"/>
+    </div>
+    <div class = "col-sm cost-description">
+        {{getDuration()}}
+    </div>
+</div>
+
+<div class = "row">
+    <div appEnlighter appSquareMaker appBuildMarker [index] = "1" class = "col-sm no-margin">
+        <img *ngIf="!canBeBuilt(1)" src = "/assets/game-graphics/darkened.png" class = "img-fluid top-layer" alt = "Responsive image">
+        <img (click) = "build()" src = "assets/game-graphics/smallBuildings/metal.png" class = "img-fluid" alt = "Responsive image"/>
+    </div>
+    <div appEnlighter appSquareMaker appBuildMarker [index] = "2" class = "col-sm no-margin">
+        <img *ngIf="!canBeBuilt(2)" src = "/assets/game-graphics/darkened.png" class = "img-fluid top-layer" alt = "Responsive image">
+        <img (click) = "build()" src = "assets/game-graphics/smallBuildings/buildingMaterials.png" class = "img-fluid" alt = "Responsive image"/>
+    </div>
+    <div appEnlighter appSquareMaker appBuildMarker [index] = "3" class = "col-sm no-margin">
+        <img *ngIf="!canBeBuilt(3)" src = "/assets/game-graphics/darkened.png" class = "img-fluid top-layer" alt = "Responsive image">
+        <img (click) = "build()" src = "assets/game-graphics/smallBuildings/electricity.png" class = "img-fluid" alt = "Responsive image"/>
+    </div>
+    <div appEnlighter appSquareMaker appBuildMarker [index] = "4" class = "col-sm no-margin">
+        <img *ngIf="!canBeBuilt(4)" src = "/assets/game-graphics/darkened.png" class = "img-fluid top-layer" alt = "Responsive image">
+        <img (click) = "build()" src = "assets/game-graphics/smallBuildings/droneTower.png" class = "img-fluid" alt = "Responsive image"/>
+    </div>
+    <div appEnlighter appSquareMaker appBuildMarker [index] = "5" class = "col-sm no-margin">
+        <img *ngIf="!canBeBuilt(5)" src = "/assets/game-graphics/darkened.png" class = "img-fluid top-layer" alt = "Responsive image">
+        <img (click) = "build()" src = "assets/game-graphics/smallBuildings/droidFactory.png" class = "img-fluid" alt = "Responsive image"/>
+    </div>
+    <div appEnlighter appSquareMaker appBuildMarker [index] = "6" class = "col-sm no-margin">
+        <img *ngIf="!canBeBuilt(6)" src = "/assets/game-graphics/darkened.png" class = "img-fluid top-layer" alt = "Responsive image">
+        <img (click) = "build()" src = "assets/game-graphics/smallBuildings/tankFactory.png" class = "img-fluid" alt = "Responsive image"/>
+    </div>
+    <div appEnlighter appSquareMaker appBuildMarker [index] = "7" class = "col-sm no-margin">
+        <img *ngIf="!canBeBuilt(7)" src = "/assets/game-graphics/darkened.png" class = "img-fluid top-layer" alt = "Responsive image">
+        <img (click) = "build()" src = "assets/game-graphics/smallBuildings/cannonFactory.png" class = "img-fluid" alt = "Responsive image"/>
+    </div>
+</div>

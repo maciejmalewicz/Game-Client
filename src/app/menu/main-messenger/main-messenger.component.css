@@ -1,0 +1,11 @@
+h6 {
+    color: yellow
+}
+
+.main-messages{
+    color: rgb(204, 204, 204);
+    font-weight: bold;
+    font-size: small;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-left: 3px;
+}

@@ -1,0 +1,22 @@
+h4 {
+    color: white;
+}
+
+.bright{
+    color: white;
+}
+
+.building-description{
+    color: white;
+    font-size: smaller;
+}
+
+.down{
+    position: absolute;
+    bottom: 5px;
+}
+
+.with-padding{
+    padding: 20px;
+    padding-bottom: 5px;
+}

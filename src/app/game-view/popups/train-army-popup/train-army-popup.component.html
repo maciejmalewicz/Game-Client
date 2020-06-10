@@ -1,0 +1,62 @@
+<div class="modal show">
+    <div class="modal-dialog">
+  
+      <!-- Modal content-->
+      <div class="modal-content modal-popout-bg">
+        <div class="modal-header">
+          <button (click) = "sendSignal(-4)" type="button" class="close white" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">TRAIN ARMY</h4>
+          <h4></h4>
+        </div>
+        <div class="modal-body" [ngStyle]="{'position': 'relative'}">
+            <div class = "container">
+                <div class = "row">
+                    <div class = "col-sm text-center">
+                      <div class = "btn-group">
+                        <button (click) = "selectUnit(1)" class="btn btn-outline-danger">DROIDS</button>
+                        <button (click) = "selectUnit(2)" class= "btn btn-outline-danger">TANKS</button>
+                        <button (click) = "selectUnit(3)" class= "btn btn-outline-danger">CANNONS</button>
+                      </div>
+                    </div>
+                </div>
+                <div *ngIf="unitSelected == 1" class = "row">
+                  <div class = "col-sm troop-description">
+                    {{this.droidsDescription}}
+                  </div>
+                </div>
+                <div *ngIf="unitSelected == 2" class = "row">
+                  <div class = "col-sm troop-description">
+                    {{this.tanksDescription}}
+                  </div>
+                </div>
+                <div *ngIf="unitSelected == 3" class = "row">
+                  <div class = "col-sm troop-description">
+                    {{this.cannonsDescription}}
+                  </div>
+                </div>
+                <div *ngIf="unitSelected > 0">
+                  <div class = "col-sm text-center production-type">
+                    PRODUCTION TYPES
+                  </div>
+                </div>
+                <div *ngIf="unitSelected > 0" class = "row">
+                  <div class = "col-4">
+                    <app-production-description [productionType] = 1 [unitType] = "unitSelected"></app-production-description>
+                  </div>
+                  <div class = "col-4">
+                    <app-production-description [productionType] = 2 [unitType] = "unitSelected"></app-production-description>
+                  </div>
+                  <div class = "col-4">
+                    <app-production-description [productionType] = 3 [unitType] = "unitSelected"></app-production-description>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button (click) = "sendSignal(-4)" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+

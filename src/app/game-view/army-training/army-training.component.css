@@ -1,0 +1,33 @@
+.small-padding{
+    padding: 2px;
+}
+
+.title{
+    text-align: center;
+}
+
+.type-description{
+    font-size: smaller;
+    color: white;
+}
+
+.relative{
+    position: relative;
+}
+
+.amount{
+    position: absolute;
+    color: white;
+    bottom: 8px;
+    right: 8px;
+    font-size: smaller;
+}
+
+.production-amount{
+    position: absolute;
+    color: rgb(6, 233, 6);
+    top: 5px;
+    left: 10px;
+    font-size: medium;
+    font-weight: bolder;
+}

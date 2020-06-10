@@ -1,0 +1,56 @@
+<app-popups></app-popups>
+<div class = "container-fluid">
+    <div class = "row">
+        <div class = "col-sm">
+            <app-game-header></app-game-header>
+        </div>
+    </div>
+    
+    <div class = "row" [ngStyle]="{'margin-bottom': '0px'}">
+        <div class = "col-3">
+            <div class = "row">
+                <div class = "col-sm">
+                    <app-army-training></app-army-training>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "col-sm">
+                    <app-training-queue></app-training-queue>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "col-sm">
+                    <app-army-actions-queue></app-army-actions-queue>
+                </div>
+            </div>
+        </div>
+        <div class = "col-6">
+            <app-areas></app-areas>
+        </div>
+        <div class = "col-3" [ngStyle]="{'position': 'relative'}">
+            <div class = "row" [ngStyle]="{'height': '13%'}">
+                <div class = "col-sm">
+                    <app-area-description></app-area-description>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "col-sm">
+                    <app-area-zoomed></app-area-zoomed>
+                </div>
+            </div>
+            <div class = "row no-gutters">
+                <!-- <div [hidden] = "!selectedBuilding.canBuildHere()" class = "row no-gutters">     -->
+                <div class = "col-sm">
+                    <app-quickbuild></app-quickbuild>
+                </div>
+            </div>
+            <div class = "row with-padding">
+                <!-- <div class = "row down-positioned" [ngStyle]="{'position': 'absolute'}"></div> -->
+                <div class = "col-sm">
+                    <app-building-queue></app-building-queue>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

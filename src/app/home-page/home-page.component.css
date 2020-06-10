@@ -1,0 +1,27 @@
+/* .container{
+    display: flex;
+    justify-content: space-around;
+    position: static;
+} */
+.modal .modal-popout-bg {
+    background-image: url('src/assets/game-graphics/popupBackground.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}
+.modal.show{
+    display: block
+}
+
+.description{
+    position: relative;
+    margin-top: 5%;
+    width: 50%;
+}
+
+.forms{
+    position: relative;
+    margin-top: 3%;
+    margin-right: 10%;
+    margin-left: auto;
+}

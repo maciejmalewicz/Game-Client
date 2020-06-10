@@ -1,0 +1,55 @@
+.active-players-header{
+    background-color:rgb(2, 2, 71);
+    color: rgb(204, 204, 204)
+}
+
+.active-friend{
+    background-color: rgb(116, 211, 107);
+    color: rgb(28, 28, 39);
+}
+
+.oversize {
+    width: 100%;
+    height: auto;
+}
+
+.zero-padding-left{
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+.no-padding-left{
+    padding-left: 2px;
+    margin-left: 0px;
+}
+
+.no-padding-right{
+    padding-right: 2px;
+    margin-right: 0px;
+}
+
+.secondary-header{
+    color: rgb(169, 240, 6);
+    font-size: large;
+    font-weight: bolder;
+}
+
+.invitation{
+    color: rgb(40, 170, 75);
+    font-weight: bold;
+    font-size: small;
+}
+
+.invitation-input{
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgb(40, 170, 75);
+    color: rgb(255, 255, 255);
+    border-style: solid;
+    width: 100%;
+    height: 100%
+}
+
+.error-message{
+    color: rgb(255, 196, 0);
+    font-size: small;
+}

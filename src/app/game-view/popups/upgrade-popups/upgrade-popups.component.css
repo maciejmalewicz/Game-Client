@@ -1,0 +1,25 @@
+.dark{
+    background-color: grey;
+}
+
+.img-small{
+    height: 20px;
+}
+
+.cost-amount{
+    font-size: xx-small;
+    font-weight: bolder;
+    text-align: left;
+    color: white;
+    text-shadow: 2px black;
+}
+
+.big-padding{
+    padding: 5px;
+    padding-top: 10px;
+}
+
+.small-padding{
+    padding: 5px;
+}
+

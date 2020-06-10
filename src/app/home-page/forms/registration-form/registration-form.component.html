@@ -1,0 +1,110 @@
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "input-field">
+            <span class = "input-field-description">
+                LOGIN: 
+            </span>
+            <span>
+                <input [(ngModel)] = "login" (input) = "type()" class = "registration-form-input" type = "text"/>
+            </span>
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "input-field">
+            <span class = "input-field-description">
+                PASSWORD:
+            </span>
+            <span>
+                <input [(ngModel)]="password" (input) = "type()" class = "registration-form-input" type = "password"/>
+            </span>
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "input-field">
+            <span class = "input-field-description">
+                REPEAT PASSWORD:
+            </span>
+            <span>
+                <input [(ngModel)]="passwordRepeated" (input) = "type()" class = "registration-form-input" type = "password"/>
+            </span>
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "input-field">
+            <span class = "input-field-description">
+                E-MAIL:
+            </span>
+            <span>
+                <input [(ngModel)]="email" (input) = "type()"  class = "registration-form-input" type = "text"/>
+            </span>
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <div appRegistrationMessenger class = "error-message"></div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "confirm-button">
+            <button (click) = "register()" type="button" [ngStyle]="{float: 'right'}" class="btn btn-success">REGISTER</button>
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "loadingIcon">
+            <img [hidden] = "rLoadingHidden" src = 'assets/loading2.gif' [ngStyle]="{float: 'right'}" />
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "registration-description">
+            Pressing "REGISTER" will send an activation code to your e-mail address.
+            Enter this code below to activate your account!
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "input-field">
+            <span class = "code-description">
+                CODE:
+            </span> 
+            <span>
+                <input [(ngModel)]="code" (input) = "type()" class = "code-input" type = "text"/>
+            </span>
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "confirm-button">
+            <button type="button" (click) = "activate()" [ngStyle]="{float: 'right'}" class="btn btn-success">
+                ACTIVATE ACCOUNT
+            </button>
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <div appActivationMessenger class = "error-message"></div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "loadingIcon">
+            <img [hidden] = "aLoadingHidden" src = "assets/loading2.gif" [ngStyle]="{float: 'right'}">
+        </div>    
+    </div>
+</div>
+
+

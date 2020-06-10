@@ -1,0 +1,53 @@
+h4 {
+    color: white;
+}
+
+.bright{
+    color: white;
+}
+
+.building-description{
+    color: white;
+    font-size: smaller;
+}
+
+.down{
+    position: absolute;
+    bottom: 5px;
+}
+
+.with-padding{
+    padding-left: 15px;
+    padding-right: 30px;
+}
+
+.relative{
+    position: relative;
+}
+
+.amount{
+    position: absolute;
+    color: white;
+    bottom: 5px;
+    right: 20px;
+}
+
+.label-description{
+    font-size: small;
+    font-weight: bolder;
+    color: white;
+}
+
+.no-padding{
+    padding: 0px;
+}
+
+.small-padding{
+    padding: 3px;
+}
+
+.input-field{
+    padding-top: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}

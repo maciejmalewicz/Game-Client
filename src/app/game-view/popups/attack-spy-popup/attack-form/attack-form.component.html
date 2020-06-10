@@ -1,0 +1,69 @@
+<div class = "container">
+    <div class = "row">
+        <div class = "col-2"></div>
+        <div class = "col-8">
+            <div class = "row">
+                <div class = "col-3 small-padding">
+                    <div class = "row">
+                        <div class = "col-sm relative">
+                            <img (click) = "selectAll(1)" appEnlighter src = "assets\game-graphics\mechs\droid-full.png" class = "img-fluid" alt = "Responsive image"/>
+                            <div class = "amount">{{getFirstUnits(1)}}</div>
+                        </div>
+                        
+                    </div>
+                    <div class = "row">
+                        <div class = "col-sm">
+                            <input [(ngModel)]="armyToSend.droids" type="number" class = "col-sm no-padding"/>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-3 small-padding">
+                    <div class = "row">
+                        <div class = "col-sm relative">
+                            <img (click) = "selectAll(2)" appEnlighter src = "assets\game-graphics\mechs\tank-full.png" class = "img-fluid" alt = "Responsive image"/>
+                            <div class = "amount">{{getFirstUnits(2)}}</div>
+                        </div>
+                        
+                    </div>
+                    <div class = "row">
+                        <div class = "col-sm">
+                            <input [(ngModel)]="armyToSend.tanks" type="number" class = "col-sm no-padding"/>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-3 small-padding">
+                    <div class = "row">
+                        <div class = "col-sm relative">
+                            <img (click) = "selectAll(3)" appEnlighter src = "assets\game-graphics\mechs\cannon-full.png" class = "img-fluid" alt = "Responsive image"/>
+                            <div class = "amount">{{getFirstUnits(3)}}</div>
+                        </div>
+                        
+                    </div>
+                    <div class = "row">
+                        <div class = "col-sm">
+                            <input [(ngModel)]="armyToSend.cannons" type="number" class = "col-sm no-padding"/>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-3 small-padding">
+                    <div class = "row">
+                        <div class = "col-sm">
+                            <img src = "assets\game-graphics\mechs\droid-full.png" class = "img-fluid" alt = "Responsive image"/>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "col-2"></div>
+    </div>
+    <div class = "row">
+        <div class = "col-5"></div>
+        <div class = "col-2">
+            <img (click)="attack()" appEnlighter src = "assets\game-graphics\misc\attack-button.png" class = "img-fluid" alt = "Responsive image"/>
+        </div>
+        <div class = "col-5"></div>
+    </div>
+    <app-enemy-bots *ngIf="isEnemy()"></app-enemy-bots>
+    <app-uncharted-bots *ngIf="isHostile()"></app-uncharted-bots>
+</div>

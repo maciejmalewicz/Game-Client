@@ -1,0 +1,78 @@
+<div class = "row header">
+    <div class = "col-4">
+        <div class = "row">
+            <div class = "col-7 right-border">
+                <h2 class = "my-score">SCORE: {{myScore | percent: '1.2-2'}}</h2>
+            </div>
+            <div class = "col-5 right-border">
+                <div class = "row">
+                    <div class = "col-sm text-right enemy-score">
+                        {{enemy1}}: {{enemy1Score | percent: '1.2-2'}}
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col-sm text-right enemy-score">
+                        {{enemy2}}: {{enemy2Score | percent: '1.2-2'}}
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col-sm text-right enemy-score">
+                        {{enemy3}}: {{enemy3Score | percent: '1.2-2'}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "col-4 right-border">
+        <div class = "row">
+            <div class = "col-1">
+                <img class = "centered" src = "assets/game-graphics/metal2.png" />
+            </div>
+            <div class = "col-3">
+                <div class = "centered resource-amount" [ngStyle]="{'margin-left': '10px'}">
+                    {{this.resources.get().METAL}}
+                </div>
+            </div>
+            <div class = "col-1">
+                <img src = "assets/game-graphics/buildingMaterials2.png"/>
+            </div>
+            <div class = "col-3">
+                <div class = "centered resource-amount" [ngStyle]="{'margin-left': '10px'}">
+                    {{this.resources.get().BUILDING_MATERIALS}}
+                </div>
+            </div>
+            <div class = "col-1">
+                <img src = "assets/game-graphics/electricity2.png"/>
+            </div>
+            <div class = "col-3">
+                <div class = "centered resource-amount" [ngStyle]="{'margin-left': '10px'}">
+                    {{this.resources.get().ELECTRICITY}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "col-1 right-border">
+        <!-- <div class = "text-center"> -->
+            <div class = "resource-amount bigger centered2">
+                {{this.time.getTimeString()}}
+            </div>
+        <!-- </div> -->
+    </div>
+    <div class = "col-3">
+        <div class = "row">
+            <div class = "col-sm">
+                <img src = "assets\game-graphics\misc\incomingAttacks.png" class = "img-fluid" alt = "Responsive image"/>
+            </div>
+            <div class = "col-sm">
+                <img src = "assets\game-graphics\misc\incomingBackups.png" class = "img-fluid" alt = "Responsive image"/>
+            </div>
+            <div class = "col-sm">
+                <img src = "assets\game-graphics\misc\sentAttacks.png" class = "img-fluid" alt = "Responsive image"/>
+            </div>
+            <div class = "col-sm">
+                <img src = "assets\game-graphics\misc\labIcon.png" class = "img-fluid" alt = "Responsive image"/>
+            </div>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,37 @@
+<div class="row d-flex justify-content-center">
+
+    <!--Grid column-->
+    <div class="col-md-9">
+  
+        <div appAreaResizer [ngStyle]="{'background-image': getBackground()}">
+            <div class = "row no-gutters" *ngFor="let a of infoService.areaUnits; let i = index">
+                <div class = "col-sm fields" *ngFor="let b of a; let j = index">
+                    <div appLittleAreaResizer class = "bordered" [ngStyle]="{'position': 'relative'}">
+                        <div appEnlighter [ngStyle]="{'background-color': getColor(i, j)}">
+                           
+                            <div *ngIf="isSomethingThere(i, j)">
+                                <img appPairSelector [row]=i [col]=j (click) = "select(i, j)" [src] = "getSource(i, j)" class = "img-fluid unselectable" alt = "Responsive image"/>
+                            </div>
+                            <div *ngIf="!isSomethingThere(i, j)">
+                                <img appPairSelector [row]=i [col]=j (click) = "select(i, j)" [src] = "'assets/game-graphics/blank.png'" class = "img-fluid unselectable" alt = "Responsive image"/>
+                            </div>
+                            <!-- links -->
+                            <img *ngIf="isLinkableVertically(i, j)" [hidden] = "!isVerticalLinkVisible(i, j)" appVeritcalLinkResizer 
+                            src = "assets\game-graphics\misc\link-vertical.png" class = "link unfocusable" tabindex="-1"/>
+
+                            <img *ngIf="isLinkableHorizontally(i, j)" [hidden] = "!isHorizontalLinkVisible(i, j)" appHorizontalLinkResizer
+                            src = "assets\game-graphics\misc\link-horizontal.png" class = "link unfocusable"/>
+                        </div>
+                        <!-- <div appUnitContent [row] = "i" [col] = "j" [innerHTML] = "getLabel(i, j)">
+                            {{i}} {{j}}
+                        </div> -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+    </div>
+    <!--Grid column-->
+  
+  </div>

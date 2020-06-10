@@ -1,0 +1,19 @@
+<div clas = "row">
+    <div class = "col-sm title">
+        Army Production Queue
+    </div>
+</div>
+<div class = "row no-gutters">
+    <div *ngFor="let event of this.getTrainingQueue()" class = "col-1" [ngStyle]="{'position': 'relative'}">
+       <img [src]="getSource(event)" alt = "Responsive image" class = "img-fluid"/>
+       <div class = "time">
+           {{getTimeToFinish(event)}}
+       </div>
+    </div>
+    
+</div>
+<div *ngIf="isQueueEmpty()" class = "row no-gutters">
+    <div class = "col-1">
+        <img appEnlighter (click)="trainUnits()" src="\assets\game-graphics\mechs\empty-queue-mechs.png" alt = "Responsive image" class = "img-fluid"/>
+    </div>
+</div>

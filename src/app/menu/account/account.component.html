@@ -1,0 +1,70 @@
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "text-center">
+            <h1 class = "menu-header">Welcome, {{this.logService.login}}</h1>
+        </div>
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <div class = "text-center">
+            <div class = "window-description">
+                HERE YOU CAN FETCH AND MODIFY INFORMATION ABOUT YOUR ACCOUNT AND YOUR ACHIEVEMENTS.
+                CHANGE YOUR LOGIN, PASSWORD OR E-MAIL ADDRESS HERE!
+            </div>
+        </div>
+    </div>
+</div>
+<div [ngStyle]="{'margin-top': '5px'}" class = "row">
+    <div class = "col-4">
+        <div [ngStyle]="{'margin-top': '10px'}" class = "row">
+            <div class = "col-sm">
+                <div class = "text-center">
+                    <h4 class = "menu-header">SETTINGS</h4>
+                </div>
+            </div>
+        </div>
+        <div [ngStyle]="{'margin-top': '10px'}" class = "row">
+            <div class = "col-sm">
+                <div class = "text-center">
+                    <button (click) = "goToHistory()" class="btn btn-outline-success btn-block">HISTORY</button>
+                </div>
+            </div>
+        </div>
+        <div [ngStyle]="{'margin-top': '10px'}" class = "row">
+            <div class = "col-sm">
+                <div class = "text-center">
+                    <button (click) = "goToChangeLogin()" class="btn btn-outline-success btn-block">CHANGE LOGIN</button>
+                </div>
+            </div>
+        </div>
+        <div [ngStyle]="{'margin-top': '10px'}" class = "row">
+            <div class = "col-sm">
+                <div class = "text-center">
+                    <button (click) = "goToChangePassword()" class="btn btn-outline-success btn-block">CHANGE PASSWORD</button>
+                </div>
+            </div>
+        </div>
+        <div [ngStyle]="{'margin-top': '10px'}" class = "row">
+            <div class = "col-sm">
+                <div class = "text-center">
+                    <button (click) = "deleteAccount()" class="btn btn-outline-success btn-block">DELETE ACCOUNT</button>
+                </div>
+            </div>
+        </div>
+        <div [ngStyle]="{'margin-top': '10px'}" class = "row">
+            <div class = "col-sm">
+                <div class = "text-center">
+                    <button (click) = "logOut()" class="btn btn-outline-danger btn-block">LOG OUT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "col-8">
+        <div [ngStyle]="{'margin-top': '10px'}">
+            <app-history [hidden] = "historyHidden"></app-history>
+            <app-change-login [hidden] = "changeLoginHidden"></app-change-login>
+            <app-change-password [hidden] = "changePasswordHidden"></app-change-password>
+        </div>
+    </div>
+</div>

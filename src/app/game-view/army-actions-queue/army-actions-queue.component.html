@@ -1,0 +1,16 @@
+<div class = "row">
+    <div class = "col-sm title">
+        Actions Queue
+    </div>
+</div>
+<div class = "row no-gutters">
+    <div *ngFor="let event of getEvents()" class = "col-1" [ngStyle]="{position: 'relative'}">
+        <img [src] = "getSource(event)" alt = "Responsive image" class = "img-fluid"/>
+    </div>
+</div>
+<div *ngIf="isQueueEmpty()" class = "row">
+    <div class = "col-sm title">
+        Queue is empty!
+    </div>
+</div>
+

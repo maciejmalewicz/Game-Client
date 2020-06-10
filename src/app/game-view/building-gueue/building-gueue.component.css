@@ -1,0 +1,44 @@
+.no-margin{
+    margin: 0px;
+    padding: 0px;
+}
+
+.title{
+    font-size: small;
+    font-weight: bolder;
+    color: white;
+    text-shadow: 2px black;
+}
+
+.time-left{
+    font-size: x-small;
+    font-weight: lighter;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: yellow;
+    font-weight: bolder;
+}
+
+.level{
+    font-size: x-small;
+    font-weight: lighter;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: rgb(64, 245, 9);
+    font-weight: bolder;
+}
+
+.relative{
+    position: relative;
+}
+
+.inside-picture{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.inside-picture-bottom{
+    position: absolute;
+    bottom: 0px;
+    right: 2px;
+}
+

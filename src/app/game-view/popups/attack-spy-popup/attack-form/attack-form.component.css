@@ -1,0 +1,18 @@
+.small-padding{
+    padding: 3px;
+}
+
+.no-padding{
+    padding: 0px;
+}
+
+.relative{
+    position: relative;
+}
+
+.amount{
+    position: absolute;
+    color: white;
+    bottom: 5px;
+    right: 20px;
+}

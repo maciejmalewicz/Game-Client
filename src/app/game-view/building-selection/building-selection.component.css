@@ -1,0 +1,23 @@
+.no-margin{
+    margin: 0px;
+    padding: 0px;
+}
+
+.cost-description{
+    font-size: small;
+    font-weight: bolder;
+    color: white;
+    text-shadow: 2px black;
+}
+
+.img-small{
+    height: 30px;
+}
+
+.bottom-layer{
+    z-index: 1;
+}
+.top-layer{
+    z-index: 2;
+    position: absolute;
+}

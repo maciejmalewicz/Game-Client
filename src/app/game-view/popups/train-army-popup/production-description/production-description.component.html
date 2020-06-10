@@ -1,0 +1,30 @@
+
+<div class = "row">
+    <div class = "col-sm text-center production-type-title">
+        {{getTitle()}}
+    </div>
+</div>
+<div class = "row no-gutters">
+    <div class = "col-3">
+        <img [src] = "getAmountSource()" class = "img-fluid" alt = "Responsive image"/>
+    </div>
+    <div class = "col-9 text-center amount">
+        {{getAmount(unitType, productionType)}}
+    </div>
+</div>
+<div class = "row no-gutters">
+    <div class = "col-3">
+        <img src = "assets\game-graphics\misc\upgrades\metal-rectangle.png" class = "img-fluid" alt = "Responsive image"/>
+    </div>
+    <div class = "col-9 text-center amount">
+        COST 
+    </div>
+</div>
+<div class = "row no-gutters">
+    <div class = "col-3">
+        <img src = "assets\game-graphics\misc\upgrades\time-rectangle.png" class = "img-fluid" alt = "Responsive image"/>
+    </div>
+    <div class = "col-9 text-center amount">
+        TIME
+    </div>
+</div>
