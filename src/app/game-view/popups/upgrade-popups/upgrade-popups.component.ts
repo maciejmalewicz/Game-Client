@@ -34,6 +34,15 @@ isResourceFactory(){
   return this.isBuildingResourceFactory(building);
 }
 
+isTower(){
+  let building = this.selectedArea.get(this.selectedBuilding.currentSelection);
+  return this.isBuildingTower(building);
+}
+
+isWalls(){
+  return this.selectedBuilding.currentSelection == 6;
+}
+
 getCost(){
   let selection = this.selectedBuilding.currentSelection;
   let event = this.selectedArea.getLatestEvent(selection) as BuildingUpgradeEvent;

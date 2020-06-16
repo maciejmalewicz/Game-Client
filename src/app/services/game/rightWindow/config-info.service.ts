@@ -50,7 +50,7 @@ export class ConfigInfoService {
   }
 
   getLevelAttributes(config: BuildingConfigurationBase<LevelAttributesConfig>, level: number): LevelAttributesConfig{
-    if (config == null || level > config.MAX_LEVEL){
+    if (config == null || level > config.MAX_LEVEL || level < 1){
       return null;
     }
     return config.LEVEL_ATTRIBUTES[level-1];

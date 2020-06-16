@@ -12,6 +12,29 @@ export class UpgradingBaseService {
 
   constructor() { }
 
+  isBuildingWalls(building: Building){
+    if (building == null){
+      return false;
+    }
+    if (building.LABEL == "UNDER_CONSTRUCTION_BUILDING"){
+      let ucb = building as UnderConstructionBuilding;
+      building = ucb.buildingUnderConstruction;
+    }
+    return building.LABEL == "WALLS";
+  }
+
+  //tower or main tower
+  isBuildingTower(building: Building){
+    if (building == null){
+      return false;
+    }
+    if (building.LABEL == "UNDER_CONSTRUCTION_BUILDING"){
+      let ucb = building as UnderConstructionBuilding;
+      building = ucb.buildingUnderConstruction;
+    }
+    return building.LABEL == "TOWER" || building.LABEL == "MAIN_TOWER";
+  }
+
   //todo - use this function
   isBuildingResourceFactory(building: Building){
     if (building == null){

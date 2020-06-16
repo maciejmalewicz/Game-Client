@@ -111,6 +111,8 @@ import { TrainArmyPopupComponent } from './game-view/popups/train-army-popup/tra
 import { ProductionDescriptionComponent } from './game-view/popups/train-army-popup/production-description/production-description.component';
 import { BuildingConfigurationMapperService } from './services/game/rightWindow/building-configuration-mapper.service';
 import { ConfigInfoService } from './services/game/rightWindow/config-info.service';
+import { UpgradeWallsDescriptionComponent } from './game-view/popups/upgrade-popups/upgrade-walls-description/upgrade-walls-description.component';
+import { UpgradeTowerDescriptionComponent } from './game-view/popups/upgrade-popups/upgrade-tower-description/upgrade-tower-description.component';
 
 
 
@@ -191,7 +193,9 @@ import { ConfigInfoService } from './services/game/rightWindow/config-info.servi
     EnemyBotsComponent,
     ArmyActionsQueueComponent,
     TrainArmyPopupComponent,
-    ProductionDescriptionComponent
+    ProductionDescriptionComponent,
+    UpgradeWallsDescriptionComponent,
+    UpgradeTowerDescriptionComponent
   ],
   imports: [
     BrowserModule,
