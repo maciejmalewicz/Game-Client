@@ -15,7 +15,7 @@ import { TrainingQueue } from 'src/app/game-view/game-models/trainingQueue';
 import { ArmyTransferEvent } from 'src/app/game-view/game-models/postponedEvents/armyMovementEvents/armyTrasferEvent';
 import { ArmyMovementQueue } from 'src/app/game-view/game-models/armyMovementQueue';
 import { ArmyMovementEvent } from 'src/app/game-view/game-models/postponedEvents/armyMovementEvents/armyMovementEvent';
-import { ArmyTransferEventMessage } from 'src/app/game-view/game-models/postponedEvents/armyMovementEvents/armyTransferEventMessage';
+
 
 @Injectable({
   providedIn: 'root'
@@ -59,7 +59,7 @@ export class UnitConverterService {
 
   private convertArmyMovementEvent(toConvert: ArmyMovementEvent){
     if (toConvert.label == ArmyTransferEvent.commonLabel){
-      let event = this.messageToArmyTransferEvent(toConvert as ArmyTransferEventMessage);
+      let event = this.messageToArmyTransferEvent(toConvert as ArmyTransferEvent);
       return event;
     }
     return null;
@@ -147,7 +147,7 @@ export class UnitConverterService {
     }
   }
 
-  private messageToArmyTransferEvent(message: ArmyTransferEventMessage){
+  private messageToArmyTransferEvent(message: ArmyTransferEvent){
     let event = new ArmyTransferEvent();
     event.finishingTime = message.finishingTime;
     event.army = message.army;

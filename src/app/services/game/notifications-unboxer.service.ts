@@ -13,6 +13,8 @@ import {  ArmyUpdateNotification } from 'src/app/game-view/game-models/gameRespo
 import { AreaOwnershipNotification } from 'src/app/game-view/game-models/gameResponses/areaOwnershipNotification';
 import { AreaDetailsNotification } from 'src/app/game-view/game-models/gameResponses/areaDetailsNotifiaction';
 import { UnitConverterService } from './unit-converter.service';
+import { AreaUnit } from 'src/app/game-view/game-models/areaUnit';
+import { ArmyTransferNotification } from 'src/app/game-view/game-models/gameResponses/armyTransferNotification';
 
 @Injectable({
   providedIn: 'root'
@@ -46,8 +48,19 @@ export class NotificationsUnboxerService {
         case "AREA_DETAILS":
           this.unboxAreaDetails(notification as AreaDetailsNotification);
           break;
+        case "ARMY_TRANSFER":
+          this.unboxArmyTransfer(notification as ArmyTransferNotification);  
+          break;
       }
     }
+  }
+
+  private unboxArmyTransfer(notification: ArmyTransferNotification){
+    let from = this.gameInfo.getByLocation(notification.from);
+    let to = this.gameInfo.getByLocation(notification.to);
+    //do stuff...
+    this.clearArmyTransfersQueue(from);
+    this.clearArmyTransfersQueue(to);
   }
 
   private unboxAreaDetails(notification: AreaDetailsNotification){
@@ -56,12 +69,12 @@ export class NotificationsUnboxerService {
   }
 
   private unboxAreaOwnership(notification: AreaOwnershipNotification){
-    let areaUnit = this.gameInfo.areaUnits[notification.location.row][notification.location.col];
+    let areaUnit = this.gameInfo.getByLocation(notification.location);
     areaUnit.OWNER = notification.owner;
   }
 
   private unboxArmyUpdate(notification: ArmyUpdateNotification){
-    let areaUnit = this.gameInfo.areaUnits[notification.location.row][notification.location.col] as OwnedAreaUnit;
+    let areaUnit = this.gameInfo.getByLocation(notification.location) as OwnedAreaUnit;
     this.gameInfo.areaUnits[notification.location.row][notification.location.col] as OwnedAreaUnit;
     areaUnit.ARMY = notification.army;
     this.clearTrainingEventQueue(areaUnit);
@@ -69,7 +82,7 @@ export class NotificationsUnboxerService {
 
   private unboxFinishedUpgrade(notification: FinishedUpgradeNotification){
     let areaUnit =
-     this.gameInfo.areaUnits[notification.location.row][notification.location.col] as OwnedAreaUnit;
+     this.gameInfo.getByLocation(notification.location) as OwnedAreaUnit;
     let building = this.getBuilding(areaUnit, notification.place);
     building.LEVEL = notification.level; 
     //clearing queue
@@ -79,11 +92,17 @@ export class NotificationsUnboxerService {
 
   private unboxFinishedBuilding(notification: FinishedBuildingNotification){
     let areaUnit 
-    = this.gameInfo.areaUnits[notification.location.row][notification.location.col] as OwnedAreaUnit;
+    = this.gameInfo.getByLocation(notification.location) as OwnedAreaUnit;
     let building = notification.building;
     this.setNewBuilding(building, notification.place, areaUnit);
     this.clearEventQueue(areaUnit);
     console.log(notification);
+  }
+
+  private clearArmyTransfersQueue(areaUnit: AreaUnit){
+    areaUnit.ARMY_MOVEMENT_QUEUE.events = areaUnit.ARMY_MOVEMENT_QUEUE.events.filter(e => {
+      return this.timer.time < e.finishingTime;
+    })
   }
 
   private clearTrainingEventQueue(areaUnit: OwnedAreaUnit){

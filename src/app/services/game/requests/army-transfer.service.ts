@@ -53,8 +53,8 @@ export class ArmyTransferService {
 
   private createEvent(request: TransferArmyRequest, response: TimeResponse){
     let event = new ArmyTransferEvent();
-    event.fromArea = this.gameInfo.getUnit(request.location),
-    event.toArea = this.gameInfo.getUnit(request.targetLocation),
+    event.fromArea = this.gameInfo.getUnit(request.location);
+    event.toArea = this.gameInfo.getUnit(request.targetLocation);
     event.from = request.location;
     event.to = request.targetLocation;
     event.army = request.army,

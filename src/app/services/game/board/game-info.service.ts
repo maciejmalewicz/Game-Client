@@ -27,6 +27,10 @@ export class GameInfoService implements OnInit{
   areaUnits = new Array<Array<AreaUnit>>();
   players: PlayersSet;
 
+  getByLocation(location: Location): AreaUnit{
+    return this.areaUnits[location.row][location.col];
+  }
+
 
   getMyPlayerIndex(): number{ //from 1 to 4
     return this.players.you;

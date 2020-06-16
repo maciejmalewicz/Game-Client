@@ -6,6 +6,9 @@
 <div class = "row no-gutters">
     <div *ngFor="let event of getEvents()" class = "col-1" [ngStyle]="{position: 'relative'}">
         <img [src] = "getSource(event)" alt = "Responsive image" class = "img-fluid"/>
+        <div class = "time">
+            {{getRemainingTime(event)}}
+        </div>
     </div>
 </div>
 <div *ngIf="isQueueEmpty()" class = "row">
