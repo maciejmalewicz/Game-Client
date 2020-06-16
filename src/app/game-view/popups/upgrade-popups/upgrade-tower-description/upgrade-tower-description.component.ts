@@ -61,12 +61,12 @@ export class UpgradeTowerDescriptionComponent extends UpgradingBaseService imple
 
   getBaseDefence(){
     let attributes = this.getCurrentLevelAttributes() as TowerLevelAttributesConfig;
-    return attributes.PROTECTION;
+    return attributes?.PROTECTION;
   }
 
   getNextBaseDefence(){
     let attributes = this.getNextLevelAttributes() as TowerLevelAttributesConfig;
-    return attributes.PROTECTION;
+    return attributes?.PROTECTION;
   }
 
   private processUnitStrength(attribute: number){
@@ -75,23 +75,23 @@ export class UpgradeTowerDescriptionComponent extends UpgradingBaseService imple
 
   getUnitStrength(){
     let attributes = this.getCurrentLevelAttributes() as TowerLevelAttributesConfig;
-    let attribute = attributes.BONUS;
+    let attribute = attributes?.BONUS;
     return this.processUnitStrength(attribute);
   }
 
   getNextUnitStrength(){
     let attributes = this.getNextLevelAttributes() as TowerLevelAttributesConfig;
-    let attribute = attributes.BONUS;
+    let attribute = attributes?.BONUS;
     return this.processUnitStrength(attribute);
   }
 
   getAttack(){
     let attributes = this.getCurrentLevelAttributes() as TowerLevelAttributesConfig;
-    return attributes.DAMAGE;
+    return attributes?.DAMAGE;
   }
 
   getNextAttack(){
     let attributes = this.getNextLevelAttributes() as TowerLevelAttributesConfig;
-    return attributes.DAMAGE;
+    return attributes?.DAMAGE;
   }
 }

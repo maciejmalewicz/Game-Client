@@ -64,32 +64,32 @@ export class UpgradeMechFactoryDescriptionComponent extends UpgradingBaseService
 
   getRegularProduction(){
     let attributes = this.getCurrentLevelAttributes();
-    return attributes.REGULAR_PRODUCTION;
+    return attributes?.REGULAR_PRODUCTION;
   }
 
   getNextRegularProduction(){
     let attributes = this.getNextLevelAttributes();
-    return attributes.REGULAR_PRODUCTION;
+    return attributes?.REGULAR_PRODUCTION;
   }
 
   getBiggerProduction(){
     let attributes = this.getCurrentLevelAttributes();
-    return attributes.BIG_PRODUCTION;
+    return attributes?.BIG_PRODUCTION;
   }
 
   getNextBiggerProduction(){
     let attributes = this.getNextLevelAttributes();
-    return attributes.BIG_PRODUCTION;
+    return attributes?.BIG_PRODUCTION;
   }
 
   getMassProduction(){
     let attributes = this.getCurrentLevelAttributes();
-    return attributes.MASS_PRODUCTION;
+    return attributes?.MASS_PRODUCTION;
   }
 
   getNextMassProduction(){
     let attributes = this.getNextLevelAttributes();
-    return attributes.MASS_PRODUCTION;
+    return attributes?.MASS_PRODUCTION;
   }
 
 

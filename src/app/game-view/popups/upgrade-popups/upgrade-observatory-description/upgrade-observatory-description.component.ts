@@ -46,12 +46,12 @@ export class UpgradeObservatoryDescriptionComponent extends UpgradingBaseService
 
   getBasicChance(){
     let attriutes = this.getCurrentLevelAttributes() as ObservatoryLevelAttributesConfig;
-    return attriutes.BASIC_CHANCE;
+    return attriutes?.BASIC_CHANCE;
   }
 
   getNextBasicChance(){
     let attriutes = this.getNextLevelAttributes() as ObservatoryLevelAttributesConfig;
-    return attriutes.BASIC_CHANCE;
+    return attriutes?.BASIC_CHANCE;
   }
 
   private processDistanceChance(attribute: number){
@@ -60,24 +60,24 @@ export class UpgradeObservatoryDescriptionComponent extends UpgradingBaseService
 
   getDistanceChance(){
     let attriutes = this.getCurrentLevelAttributes() as ObservatoryLevelAttributesConfig;
-    let attribute =  attriutes.DISTANCE_CHANCE_REDUCTION_MULTIPLIER;
+    let attribute =  attriutes?.DISTANCE_CHANCE_REDUCTION_MULTIPLIER;
     return this.processDistanceChance(attribute);
   }
 
   getNextDistanceChance(){
     let attriutes = this.getNextLevelAttributes() as ObservatoryLevelAttributesConfig;
-    let attribute = attriutes.DISTANCE_CHANCE_REDUCTION_MULTIPLIER;
+    let attribute = attriutes?.DISTANCE_CHANCE_REDUCTION_MULTIPLIER;
     return this.processDistanceChance(attribute);
   }
 
   getChanceProtection(){
     let attriutes = this.getCurrentLevelAttributes() as ObservatoryLevelAttributesConfig;
-    return attriutes.ENEMYS_CHANCE_REDUCTION;
+    return attriutes?.ENEMYS_CHANCE_REDUCTION;
   }
 
   getNextChanceProtection(){
     let attriutes = this.getNextLevelAttributes() as ObservatoryLevelAttributesConfig;
-    return attriutes.ENEMYS_CHANCE_REDUCTION;
+    return attriutes?.ENEMYS_CHANCE_REDUCTION;
   }
 
 }

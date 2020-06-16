@@ -5,6 +5,7 @@ import { BuildingUpgradeEvent } from 'src/app/game-view/game-models/postponedEve
 import { FactoryConfig } from 'src/app/models/configuration/buildings/factoryConfig';
 import { Building } from 'src/app/game-view/game-models/buildings/building';
 import { ConfigInfoService } from 'src/app/services/game/rightWindow/config-info.service';
+import { UnderConstructionBuilding } from 'src/app/game-view/game-models/buildings/underConstructionBuilding';
 
 @Component({
   selector: 'app-upgrade-factory-description',
@@ -20,7 +21,12 @@ export class UpgradeFactoryDescriptionComponent implements OnInit {
   }
 
   getSource(){
-    let label = this.areaSelected.get(this.buildingSelected.currentSelection).LABEL;
+    let building = this.areaSelected.get(this.buildingSelected.currentSelection);
+    if (building.LABEL == "UNDER_CONSTRUCTION_BUILDING"){
+      let ucb = building as UnderConstructionBuilding;
+      building = ucb.buildingUnderConstruction;
+    }
+    let label = building.LABEL;
     if (label == "BIG_METAL" || label == "SMALL_METAL"){
       return "assets/game-graphics/misc/upgrades/metal-production.png"
     } else if (label == "BIG_BUILDING_MATERIALS" || label == "SMALL_BUILDING_MATERIALS"){

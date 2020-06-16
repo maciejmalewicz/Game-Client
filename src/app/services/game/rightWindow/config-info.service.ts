@@ -61,6 +61,9 @@ export class ConfigInfoService {
       return 0;
     }
     let levelAttributes = this.getLevelAttributesByBuilding(factory, level) as ResourceFactoryLevelAttributesConfig;
+    if (levelAttributes == null){
+      return 0;
+    }
     return levelAttributes.PRODUCTION;
   }
 

@@ -56,7 +56,6 @@ export class UpgradingBaseService {
     return this.hasOneOfLabels(building, ["TOWER", "MAIN_TOWER"]);
   }
 
-  //todo - use this function
   isBuildingResourceFactory(building: Building){
     return this.hasOneOfLabels(building, ["BIG_METAL", "BIG_BUILDING_MATERIALS", "BIG_ELECTRICITY",
     "SMALL_METAL", "SMALL_BUILDING_MATERIALS", "SMALL_ELECTRICITY"]);

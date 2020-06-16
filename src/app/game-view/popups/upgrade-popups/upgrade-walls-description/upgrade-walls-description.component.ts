@@ -69,12 +69,12 @@ export class UpgradeWallsDescriptionComponent extends UpgradingBaseService imple
 
   getBaseDefence(){
     let attributes = this.getCurrentLevelAttributes() as WallsLevelAttributesConfig;
-    return attributes.PROTECTION;
+    return attributes?.PROTECTION;
   }
 
   getNextBaseDefence(){
     let attributes = this.getNextLevelAttributes() as WallsLevelAttributesConfig;
-    return attributes.PROTECTION;
+    return attributes?.PROTECTION;
   }
 
   private processUnitStrength(attribute: number){

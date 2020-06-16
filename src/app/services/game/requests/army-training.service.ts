@@ -40,7 +40,6 @@ export class ArmyTrainingService {
     }
 
     private addEvent(request: TrainArmyRequest, response: TimeResponse){
-      let unit = this.selectedField.selectedField as OwnedAreaUnit;
       let event = new ArmyTrainingEvent();
       event.finishingTime = response.finishingTime;
       event.unitType = request.unitType;
