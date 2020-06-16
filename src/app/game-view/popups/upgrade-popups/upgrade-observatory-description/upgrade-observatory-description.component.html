@@ -1,1 +1,42 @@
-<p>upgrade-observatory-description works!</p>
+<div class = "row">
+    <div class = "col-sm">
+        <img src = "assets\game-graphics\misc\upgrades\chance.png" class = "img-fluid" alt = "Responsive image"/>
+    </div>
+    <div class = "col-sm popup-amount-before">
+        {{getBasicChance() | percent:'.0-0'}}
+    </div>
+    <div class = "col-sm">
+        <img src = "assets\game-graphics\misc\upgrades\progress-arrow.png" class = "img-fluid" alt = "Responsive image"/>
+    </div>
+    <div class = "col-sm popup-amount-after">
+        {{getNextBasicChance() | percent:'.0-0'}}
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <img src = "assets\game-graphics\misc\upgrades\distance-chance.png" class = "img-fluid" alt = "Responsive image"/>
+    </div>
+    <div class = "col-sm popup-amount-before">
+        {{getDistanceChance() | percent:'.0-0'}}
+    </div>
+    <div class = "col-sm">
+        <img src = "assets\game-graphics\misc\upgrades\progress-arrow.png" class = "img-fluid" alt = "Responsive image"/>
+    </div>
+    <div class = "col-sm popup-amount-after">
+        {{getNextDistanceChance() | percent:'.0-0'}}
+    </div>
+</div>
+<div class = "row">
+    <div class = "col-sm">
+        <img src = "assets\game-graphics\misc\upgrades\chance-protection.png" class = "img-fluid" alt = "Responsive image"/>
+    </div>
+    <div class = "col-sm popup-amount-before">
+        {{getChanceProtection() | percent:'.0-0'}}
+    </div>
+    <div class = "col-sm">
+        <img src = "assets\game-graphics\misc\upgrades\progress-arrow.png" class = "img-fluid" alt = "Responsive image"/>
+    </div>
+    <div class = "col-sm popup-amount-after">
+        {{getNextChanceProtection() | percent:'.0-0'}}
+    </div>
+</div>

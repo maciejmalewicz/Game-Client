@@ -49,7 +49,7 @@ isWalls(){
 
 isObservatory(){
   let building = this.getSelectedBuilding();
-  return building != null && building.LABEL == "OBSERVATORY";
+  return this.isBuildingObservatory(building);
 }
 
 getCost(){
