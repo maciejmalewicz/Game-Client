@@ -1,2 +1,2 @@
 # Game-Client
-Front-end of "Desert 21"
+Frontend of "Desert 21"
