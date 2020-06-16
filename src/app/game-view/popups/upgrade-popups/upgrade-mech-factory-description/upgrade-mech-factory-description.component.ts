@@ -5,6 +5,7 @@ import { ConfigInfoService } from 'src/app/services/game/rightWindow/config-info
 import { GameConfigurationService } from 'src/app/services/game/game-configuration.service';
 import { UpgradingBaseService } from 'src/app/services/game/rightWindow/upgrading-base.service';
 import { BuildingUpgradeEvent } from 'src/app/game-view/game-models/postponedEvents/buildingUpgradeEvent';
+import { MechFactoryLevelAttributesConfig } from 'src/app/models/configuration/buildings/levelAttributes/mechFactoryLevelAttributesConfig';
 
 @Component({
   selector: 'app-upgrade-mech-factory-description',
@@ -52,7 +53,44 @@ export class UpgradeMechFactoryDescriptionComponent extends UpgradingBaseService
   getCurrentLevelAttributes(){
     let config = this.getConfiguration();
     let level = this.getLevel();
-    return this.configInfo.getLevelAttributes(config, level);
+    return this.configInfo.getLevelAttributes(config, level) as MechFactoryLevelAttributesConfig;
   }
+
+  getNextLevelAttributes(){
+    let config = this.getConfiguration();
+    let level = this.getLevel() + 1;
+    return this.configInfo.getLevelAttributes(config, level) as MechFactoryLevelAttributesConfig;
+  }
+
+  getRegularProduction(){
+    let attributes = this.getCurrentLevelAttributes();
+    return attributes.REGULAR_PRODUCTION;
+  }
+
+  getNextRegularProduction(){
+    let attributes = this.getNextLevelAttributes();
+    return attributes.REGULAR_PRODUCTION;
+  }
+
+  getBiggerProduction(){
+    let attributes = this.getCurrentLevelAttributes();
+    return attributes.BIG_PRODUCTION;
+  }
+
+  getNextBiggerProduction(){
+    let attributes = this.getNextLevelAttributes();
+    return attributes.BIG_PRODUCTION;
+  }
+
+  getMassProduction(){
+    let attributes = this.getCurrentLevelAttributes();
+    return attributes.MASS_PRODUCTION;
+  }
+
+  getNextMassProduction(){
+    let attributes = this.getNextLevelAttributes();
+    return attributes.MASS_PRODUCTION;
+  }
+
 
 }

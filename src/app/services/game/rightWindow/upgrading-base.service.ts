@@ -14,7 +14,7 @@ export class UpgradingBaseService {
     return this.hasLabel(building, "WALLS");
   }
 
-  hasLabel(building: Building, label: string){
+   hasLabel(building: Building, label: string){
     if (building == null){
       return false;
     }
