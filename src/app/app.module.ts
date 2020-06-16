@@ -113,6 +113,7 @@ import { BuildingConfigurationMapperService } from './services/game/rightWindow/
 import { ConfigInfoService } from './services/game/rightWindow/config-info.service';
 import { UpgradeWallsDescriptionComponent } from './game-view/popups/upgrade-popups/upgrade-walls-description/upgrade-walls-description.component';
 import { UpgradeTowerDescriptionComponent } from './game-view/popups/upgrade-popups/upgrade-tower-description/upgrade-tower-description.component';
+import { UpgradeObservatoryDescriptionComponent } from './game-view/popups/upgrade-popups/upgrade-observatory-description/upgrade-observatory-description.component';
 
 
 
@@ -195,7 +196,8 @@ import { UpgradeTowerDescriptionComponent } from './game-view/popups/upgrade-pop
     TrainArmyPopupComponent,
     ProductionDescriptionComponent,
     UpgradeWallsDescriptionComponent,
-    UpgradeTowerDescriptionComponent
+    UpgradeTowerDescriptionComponent,
+    UpgradeObservatoryDescriptionComponent
   ],
   imports: [
     BrowserModule,

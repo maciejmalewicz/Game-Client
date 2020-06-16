@@ -5,16 +5,19 @@ import { ConfigInfoService } from 'src/app/services/game/rightWindow/config-info
 import { GameConfigurationService } from 'src/app/services/game/game-configuration.service';
 import { BuildingUpgradeEvent } from 'src/app/game-view/game-models/postponedEvents/buildingUpgradeEvent';
 import { WallsLevelAttributesConfig } from 'src/app/models/configuration/buildings/levelAttributes/wallsLevelAttributesConfig';
+import { UpgradingBaseService } from 'src/app/services/game/rightWindow/upgrading-base.service';
 
 @Component({
   selector: 'app-upgrade-walls-description',
   templateUrl: './upgrade-walls-description.component.html',
   styleUrls: ['./upgrade-walls-description.component.css']
 })
-export class UpgradeWallsDescriptionComponent implements OnInit {
+export class UpgradeWallsDescriptionComponent extends UpgradingBaseService implements OnInit {
 
   constructor(private areaSelected: SelectedFieldService,
-    private configInfo: ConfigInfoService, private gameConfig: GameConfigurationService) { }
+    private configInfo: ConfigInfoService, private gameConfig: GameConfigurationService) {
+      super();
+     }
 
   ngOnInit(): void {
   }
@@ -25,18 +28,8 @@ export class UpgradeWallsDescriptionComponent implements OnInit {
 
   private getLevel(){
     let building = this.areaSelected.getWalls(); 
-    //no walls built yet
-    if (building == null){
-      return 0;
-    }
     let event = this.areaSelected.getLatestEvent(6) as BuildingUpgradeEvent;
-    if (event == null){
-      return building.LEVEL;
-    }
-    if (event.level == undefined){
-      return 1;
-    }
-    return event.level;
+    return this.getCurrentLevel(building, event);
   }
 
   private getCurrentLevelAttributes(){

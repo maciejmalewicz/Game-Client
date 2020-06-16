@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Building } from 'src/app/game-view/game-models/buildings/building';
 import { BuildingUpgradeEvent } from 'src/app/game-view/game-models/postponedEvents/buildingUpgradeEvent';
-import { SelectedFieldService } from '../board/selected-field.service';
-import { BuildingSelectionService } from './building-selection.service';
 import { UnderConstructionBuilding } from 'src/app/game-view/game-models/buildings/underConstructionBuilding';
 
 @Injectable({
@@ -13,6 +11,10 @@ export class UpgradingBaseService {
   constructor() { }
 
   isBuildingWalls(building: Building){
+    return this.hasLabel(building, "WALLS");
+  }
+
+  private hasLabel(building: Building, label: string){
     if (building == null){
       return false;
     }
@@ -20,51 +22,47 @@ export class UpgradingBaseService {
       let ucb = building as UnderConstructionBuilding;
       building = ucb.buildingUnderConstruction;
     }
-    return building.LABEL == "WALLS";
+    return building.LABEL == label;
+  }
+
+  private hasOneOfLabels(building: Building, labels: Array<string>){
+    if (building == null){
+      return false;
+    }
+    if (building.LABEL == "UNDER_CONSTRUCTION_BUILDING"){
+      let ucb = building as UnderConstructionBuilding;
+      building = ucb.buildingUnderConstruction;
+    }
+    for (let label of labels){
+      if (building.LABEL == label){
+        return true;
+      }
+    }
+    return false;
+  }
+
+  //drone tower / observatory
+  isBuildingObservatory(building: Building){
+    return this.hasLabel(building, "OBSERVATORY");
   }
 
   //tower or main tower
   isBuildingTower(building: Building){
-    if (building == null){
-      return false;
-    }
-    if (building.LABEL == "UNDER_CONSTRUCTION_BUILDING"){
-      let ucb = building as UnderConstructionBuilding;
-      building = ucb.buildingUnderConstruction;
-    }
-    return building.LABEL == "TOWER" || building.LABEL == "MAIN_TOWER";
+    return this.hasOneOfLabels(building, ["TOWER", "MAIN_TOWER"]);
   }
 
   //todo - use this function
   isBuildingResourceFactory(building: Building){
-    if (building == null){
-      return false;
-    }
-    if (building.LABEL == "UNDER_CONSTRUCTION_BUILDING"){
-      let ucb = building as UnderConstructionBuilding;
-      building = ucb.buildingUnderConstruction;
-    }
-    let label = building.LABEL;
-    if (label == "BIG_METAL" || label == "BIG_BUILDING_MATERIALS" || label == "BIG_ELECTRICITY"
-    || label == "SMALL_METAL" || label == "SMALL_BUILDING_MATERIALS" || label == "SMALL_ELECTRICITY"){
-      return true;
-    }
-    return false;
+    return this.hasOneOfLabels(building, ["BIG_METAL", "BIG_BUILDING_MATERIALS", "BIG_ELECTRICITY",
+    "SMALL_METAL", "SMALL_BUILDING_MATERIALS", "SMALL_ELECTRICITY"]);
   }
 
   isBuildingSmallResourceFactory(building: Building){
-    if (building == null){
-      return false;
-    }
-    if (building.LABEL == "UNDER_CONSTRUCTION_BUILDING"){
-      let ucb = building as UnderConstructionBuilding;
-      building = ucb.buildingUnderConstruction;
-    }
-    let label = building.LABEL;
-    if (label == "SMALL_METAL" || label == "SMALL_BUILDING_MATERIALS" || label == "SMALL_ELECTRICITY"){
-      return true;
-    }
-    return false;
+    return this.hasOneOfLabels(building, ["SMALL_METAL", "SMALL_BUILDING_MATERIALS", "SMALL_ELECTRICITY"]);
+  }
+
+  protected getCurrentLevel(building: Building, event: BuildingUpgradeEvent): number{
+    return this.getLevelToUpgrade(building, event) - 1;
   }
 
   protected getLevelToUpgrade(building: Building, event: BuildingUpgradeEvent): number{

@@ -29,18 +29,27 @@ sendSignal(signal: number){
 this.popupLauncher.sendSignal(signal);
 }
 
+private getSelectedBuilding(){
+  return this.selectedArea.get(this.selectedBuilding.currentSelection);
+}
+
 isResourceFactory(){
-  let building = this.selectedArea.get(this.selectedBuilding.currentSelection);
+  let building = this.getSelectedBuilding();
   return this.isBuildingResourceFactory(building);
 }
 
 isTower(){
-  let building = this.selectedArea.get(this.selectedBuilding.currentSelection);
+  let building = this.getSelectedBuilding();
   return this.isBuildingTower(building);
 }
 
 isWalls(){
   return this.selectedBuilding.currentSelection == 6;
+}
+
+isObservatory(){
+  let building = this.getSelectedBuilding();
+  return building != null && building.LABEL == "OBSERVATORY";
 }
 
 getCost(){
