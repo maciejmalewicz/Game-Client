@@ -14,7 +14,7 @@ export class UpgradingBaseService {
     return this.hasLabel(building, "WALLS");
   }
 
-  private hasLabel(building: Building, label: string){
+  hasLabel(building: Building, label: string){
     if (building == null){
       return false;
     }
@@ -39,6 +39,11 @@ export class UpgradingBaseService {
       }
     }
     return false;
+  }
+
+  //droid/tank/cannon factory
+  isBuildingMechFactory(building: Building){
+    return this.hasOneOfLabels(building, ["DROIDS", "TANKS", "CANNONS"]);
   }
 
   //drone tower / observatory

@@ -114,6 +114,7 @@ import { ConfigInfoService } from './services/game/rightWindow/config-info.servi
 import { UpgradeWallsDescriptionComponent } from './game-view/popups/upgrade-popups/upgrade-walls-description/upgrade-walls-description.component';
 import { UpgradeTowerDescriptionComponent } from './game-view/popups/upgrade-popups/upgrade-tower-description/upgrade-tower-description.component';
 import { UpgradeObservatoryDescriptionComponent } from './game-view/popups/upgrade-popups/upgrade-observatory-description/upgrade-observatory-description.component';
+import { UpgradeMechFactoryDescriptionComponent } from './game-view/popups/upgrade-popups/upgrade-mech-factory-description/upgrade-mech-factory-description.component';
 
 
 
@@ -197,7 +198,8 @@ import { UpgradeObservatoryDescriptionComponent } from './game-view/popups/upgra
     ProductionDescriptionComponent,
     UpgradeWallsDescriptionComponent,
     UpgradeTowerDescriptionComponent,
-    UpgradeObservatoryDescriptionComponent
+    UpgradeObservatoryDescriptionComponent,
+    UpgradeMechFactoryDescriptionComponent
   ],
   imports: [
     BrowserModule,

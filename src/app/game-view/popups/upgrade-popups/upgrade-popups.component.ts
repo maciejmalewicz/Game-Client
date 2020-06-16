@@ -52,6 +52,11 @@ isObservatory(){
   return this.isBuildingObservatory(building);
 }
 
+isMechFactory(){
+  let building = this.getSelectedBuilding();
+  return this.isBuildingMechFactory(building);
+}
+
 getCost(){
   let selection = this.selectedBuilding.currentSelection;
   let event = this.selectedArea.getLatestEvent(selection) as BuildingUpgradeEvent;
